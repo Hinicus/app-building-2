@@ -1,0 +1,52 @@
+.custom-navbar {
+  --bs-navbar-color: #9e1b32; /* Default link color */
+  --bs-navbar-hover-color: #ff6b6b; /* Hover link color */
+  --bs-navbar-active-color: #9e1b32; /* Active link color */
+  --bs-navbar-brand-color: #9e1b32; /* Brand text color */
+  --bs-navbar-brand-hover-color: #ff6b6b;
+}
+
+/* body color */
+.surface-color {
+  background-color: #f6f9ff;
+}
+
+/* section bg color */
+.surface-dark-color {
+  background-color: #edf4fd;
+}
+
+.header-font {
+  font-family: "Newsreader", sans-serif;
+}
+
+/* colors */
+.primary-color {
+  color: #9e1b32;
+}
+
+.text-color {
+  color: #594141;
+}
+
+/* buttons */
+.btn-primary-bg {
+  background-color: #9e1b32;
+
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary-bg:hover {
+  background-color: #d32f2f;
+}
+
+/* white button */
+.btn-white-bg {
+  background-color: white;
+
+  transition: background-color 0.3s ease;
+}
+
+.btn-white-bg:hover {
+  background-color: #dee0e4;
+}
