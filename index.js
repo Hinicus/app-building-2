@@ -154,7 +154,7 @@ function renderFeaturedCards() {
 
 // Render 6-Card Categories Grid
 function renderCategoryCards() {
-  const grid = document.getElementById("categories-grid");
+  const grid = document.getElementById("categories");
   grid.innerHTML = academicCategories
     .map(
       (cat) => `
