@@ -1,26 +1,79 @@
-.custom-navbar {
-  --bs-navbar-color: #9e1b32; /* Default link color */
-  --bs-navbar-hover-color: #ff6b6b; /* Hover link color */
-  --bs-navbar-active-color: #9e1b32; /* Active link color */
-  --bs-navbar-brand-color: #9e1b32; /* Brand text color */
-  --bs-navbar-brand-hover-color: #ff6b6b;
+:root {
+  --primary-crimson: #9e1b32;
+  --hover-crimson: #d32f2f;
+  --accent-coral: #ff6b6b;
+  --surface-light: #f6f9ff;
+  --surface-dark: #edf4fd;
+  --text-brown: #594141;
+  --heading-dark: #231818;
 }
 
-/* body color */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 76px;
+}
+
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  color: var(--heading-dark);
+  background-color: var(--surface-light);
+  overflow-x: hidden;
+}
+
+/* Custom Navbar */
+.custom-navbar {
+  --bs-navbar-color: #9e1b32;
+  --bs-navbar-hover-color: #ff6b6b;
+  --bs-navbar-active-color: #9e1b32;
+  --bs-navbar-brand-color: #9e1b32;
+  --bs-navbar-brand-hover-color: #ff6b6b;
+  background-color: rgba(246, 249, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(158, 27, 50, 0.1);
+}
+
+.custom-navbar .nav-link {
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 0.9rem;
+  transition: color 0.25s ease;
+}
+
+.custom-navbar .nav-link.active {
+  font-weight: 700;
+  color: #9e1b32 !important;
+}
+
+.custom-navbar .nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0.9rem;
+  right: 0.9rem;
+  height: 2px;
+  background-color: #9e1b32;
+  border-radius: 2px;
+}
+
+/* Surface & Color Utilities */
 .surface-color {
   background-color: #f6f9ff;
 }
 
-/* section bg color */
 .surface-dark-color {
   background-color: #edf4fd;
 }
 
 .header-font {
-  font-family: "Newsreader", sans-serif;
+  font-family: "Newsreader", Georgia, serif;
 }
 
-/* colors */
 .primary-color {
   color: #9e1b32;
 }
@@ -29,24 +82,171 @@
   color: #594141;
 }
 
-/* buttons */
+/* Buttons */
 .btn-primary-bg {
   background-color: #9e1b32;
-
-  transition: background-color 0.3s ease;
+  color: #ffffff;
+  border: 1px solid #9e1b32;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
 }
 
 .btn-primary-bg:hover {
   background-color: #d32f2f;
+  border-color: #d32f2f;
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
-/* white button */
 .btn-white-bg {
-  background-color: white;
-
-  transition: background-color 0.3s ease;
+  background-color: #ffffff;
+  color: #9e1b32;
+  border: 1px solid rgba(158, 27, 50, 0.2);
+  transition: all 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
 }
 
 .btn-white-bg:hover {
   background-color: #dee0e4;
+  color: #9e1b32;
+  transform: translateY(-1px);
+}
+
+/* Section Dividers matching Wireframe */
+.section-divider {
+  border-top: 1px solid rgba(158, 27, 50, 0.12);
+}
+
+/* Hero Banner Container */
+.hero-box {
+  background: linear-gradient(180deg, #ffffff 0%, #edf4fd 100%);
+  border: 1px solid rgba(158, 27, 50, 0.14);
+  border-radius: 1rem;
+}
+
+/* Academic Resource & Category Cards */
+.academic-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(158, 27, 50, 0.1);
+  border-radius: 0.75rem;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.academic-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(35, 24, 24, 0.08);
+  border-color: rgba(158, 27, 50, 0.35);
+}
+
+.card-visual-header {
+  background-color: #edf4fd;
+  border-bottom: 1px solid rgba(158, 27, 50, 0.08);
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  height: 135px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-visual-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    rgba(158, 27, 50, 0.12) 1px,
+    transparent 1px
+  );
+  background-size: 14px 14px;
+  opacity: 0.6;
+}
+
+.card-visual-icon {
+  position: relative;
+  z-index: 1;
+  width: 54px;
+  height: 54px;
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+  color: #9e1b32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.65rem;
+  box-shadow: 0 4px 12px rgba(158, 27, 50, 0.12);
+}
+
+.category-card-visual {
+  height: 110px;
+}
+
+/* Interactive Archive Map in Sample Resources */
+.archive-map-wrapper {
+  background-color: #e3ecf8;
+  border: 1px solid rgba(158, 27, 50, 0.15);
+  border-radius: 0.75rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 230px;
+}
+
+.map-pin-btn {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.map-pin-btn:hover {
+  transform: scale(1.15);
+}
+
+.badge-crimson-soft {
+  background-color: rgba(158, 27, 50, 0.1);
+  color: #9e1b32;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+}
+
+/* Custom Toast Notification */
+.custom-toast {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1080;
+  background-color: #231818;
+  color: #ffffff;
+  padding: 0.85rem 1.25rem;
+  border-radius: 0.65rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transform: translateY(120%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.custom-toast.show {
+  transform: translateY(0);
+  opacity: 1;
 }
